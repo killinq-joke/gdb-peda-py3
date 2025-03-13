@@ -587,7 +587,7 @@ def cyclic_pattern_charset(charset_type=None):
         charset[2] = "sn()" + charset[2]
 
     if charset_type == 2: # maximum type
-        charset += ['!"#$%&\()*+,-./:;<=>?@[]^_{|}~'] # string.punctuation
+        charset += ['!"#$%&\\()*+,-./:;<=>?@[]^_{|}~'] # string.punctuation
 
     mixed_charset = mixed = ''
     k = 0

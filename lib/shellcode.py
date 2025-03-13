@@ -19,6 +19,7 @@ import sys
 import config
 from utils import msg, error_msg
 import six
+import http.client
 
 if sys.version_info.major == 3:
     from urllib.request import urlopen
@@ -309,7 +310,7 @@ class Shellcode():
             return None
         try:
             msg("Connecting to shell-storm.org...")
-            s = http_client.HTTPConnection("shell-storm.org")
+            s = http.client.HTTPConnection("shell-storm.org")
 
             s.request("GET", "/api/?s="+str(keyword))
             res = s.getresponse()
@@ -347,7 +348,7 @@ class Shellcode():
 
         try:
             msg("Connecting to shell-storm.org...")
-            s = http_client.HTTPConnection("shell-storm.org")
+            s = http.client.HTTPConnection("shell-storm.org")
         except:
             error_msg("Cannot connect to shell-storm.org")
             return None
